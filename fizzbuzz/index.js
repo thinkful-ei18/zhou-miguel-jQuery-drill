@@ -7,20 +7,19 @@ $('#number-chooser').submit(e=>{
 })
 
 function fizzBuzz(num){
-  let result = `<div class="fizz-buzz-item">
-                  <span></span>
-                </div>`;
-  
+  let fizzClass = ""
+  let fizzContent = ""
+
 
   for(let i=0;i<=num;i++){
   
     
    if(i%15===0 && i!==0){
-    result =`<div class="fizz-buzz-item fizzbuzz">
-                  <span>FizzBuzz</span>
-                </div>`;
-
-    
+    // result =`<div class="fizz-buzz-item fizzbuzz">
+    //               <span>FizzBuzz</span>
+    //             </div>`;
+    fizzClass='fizzBuzz'
+    fizzContent='fizzBuzz'
   }
   else if(i%5===0 && i!==0){
     result =`<div class="fizz-buzz-item buzz">
@@ -36,11 +35,14 @@ function fizzBuzz(num){
 
   }
   else{
-      result =`<div class="fizz-buzz-item fizzbuzz">
+    result =`<div class="fizz-buzz-item fizzbuzz">
                   <span>${i}</span>
                 </div>`; 
   }
 
+  let result = `<div class="fizz-buzz-item ${fizzClass}">
+                  <span>${fizzContent}</span>
+                </div>`
   $('.js-results').append(result);
 }
 

@@ -17,8 +17,9 @@ $('#js-shopping-list-form').submit( e=> {
     $(".shopping-list").append(myList)
 })
 $('.shopping-list').on('click','.shopping-item-toggle', e => {
-    $(e.target).parent().parent().parent().find('.shopping-item').toggleClass('shopping-item__checked')
+    $(e.target).closest('li').find('.shopping-item').toggleClass('shopping-item__checked')
 })
 $('.shopping-list').on('click','.shopping-item-delete', e=> {
-    $(e.target).parent().parent().parent().remove()
+    // $(e.currentTarget).find('li').remove()
+    $(e.target).closest('li').remove()
 })
